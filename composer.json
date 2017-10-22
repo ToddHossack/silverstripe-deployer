@@ -2,8 +2,8 @@
 	"name": "burnbright/silverstripe-deployer",
 	"description": "Opinionated recipe for deploying SilverStripe projects via Deployer",
 	"require": {
-		"php": ">=7",
-		"deployer/deployer": "^5"
+		"php": ">=5.6.0",
+		"deployer/deployer": "^4.3.1"
 	},
 	"autoload": {
 		"psr-4": {

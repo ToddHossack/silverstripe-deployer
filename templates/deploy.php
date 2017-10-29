@@ -7,10 +7,10 @@ require 'recipe/silverstripe-deployer.php';
 set('repository', 'GIREPOSITORY');
 
 // Hosts
-host('example.com')
+server('example.com')
     ->user('SSHUSERNAME')
     ->stage('production');
 
-host('staging.example.com')
+server('staging.example.com')
     ->user('SSHUSERNAME')
     ->stage('staging');

@@ -32,12 +32,18 @@ require 'tasks/silverstripe.env.php';
 $isci = !empty(getenv('CI'));
 
 // perform build, release, clean steps
-task('deploy', [
+$deployTasks = [
 	$isci ? 'project:build' : 'localbuild',
 	'release',
 	'cleanup',
 	'success'
-]);
+];
+
+if(!$isci) {
+    array_unshift($deployTasks,'localbuild:config');
+}
+
+task('deploy', $deployTasks);
 
 // perform release
 task('release', [
